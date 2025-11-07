@@ -1,0 +1,113 @@
+.skills-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at top left, #0a0a0f, #0f172a);
+  color: #e2e8f0;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #00d4ff, #7c5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-subtitle {
+  font-size: 1rem;
+  color: #a1a1aa;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+}
+
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.8rem;
+  /* filter: drop-shadow(0 0 4px #00d4ff); */
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: rotate(8deg) scale(1.05);
+}
+
+.skill-info {
+  text-align: left;
+}
+
+.skill-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  color: #e2e8f0;
+}
+
+.skill-info p {
+  font-size: 0.85rem;
+  color: #a1a1aa;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .skill-icon {
+    margin: 0 0 0.6rem 0;
+  }
+
+  .skill-info {
+    text-align: center;
+  }
+}

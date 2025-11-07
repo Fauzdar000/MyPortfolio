@@ -1,0 +1,202 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* ===== Navbar Layout ===== */
+.navbar {
+  width: 100%;
+  padding: 1rem 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent; /* Fully transparent background */
+  backdrop-filter: blur(10px); /* Slight blur for modern effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: background 0.3s ease;
+
+}
+
+/* Logo - left */
+.logo h2 {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.logo h2:hover {
+  color: #fff;
+}
+
+/* ===== Nav links - center ===== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00bcd4;
+}
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ===== Contact button - right ===== */
+.contacts li {
+  list-style: none;
+}
+.contacts li a {
+  text-decoration: none;
+  background: #00bcd4;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.contacts li a:hover {
+  background: #0097a7;
+  transform: translateY(-2px);
+}
+
+/* ===== Hamburger Icon ===== */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 200;
+  padding-right: 4.5rem;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+}
+.menu-icon.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+ .mobile-contact {
+    display:none;
+  }
+
+
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+  
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(45, 46, 47, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);    
+    opacity: 0;
+    /* transform: translateY(-20px); */
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.open {
+    height: auto;
+    padding: 1rem;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .contacts {
+    display: none;
+  }
+
+  .mobile-contact {
+    display: block;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .navbar{
+  padding: 1rem;
+}
+
+.menu-icon {
+  
+  padding: 0;
+}
+}
+
+/* ===== Smooth Fade Animation ===== */
+.nav-links,
+.nav-links.open {
+  transition: all 0.35s ease-in-out;
+}
