@@ -1,0 +1,124 @@
+.chat-icon {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Gradient border */
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  color: #2563eb;
+
+  cursor: pointer;
+  z-index: 1000;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.25),
+    inset 0 0 0 1px rgba(255,255,255,0.2);
+
+  transition: all 0.3s ease;
+}
+.chat-icon:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 15px 30px rgba(37, 99, 235, 0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.3);
+}
+.chat-window {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  width: 330px;
+  height: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-header {
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header span {
+  cursor: pointer;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.msg {
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+  font-size: 14px;
+}
+
+.msg.user {
+  background: #2563eb;
+  color: white;
+  margin-left: auto;
+}
+
+.msg.bot {
+  background: #f1f5f9;
+  color: #111;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+
+.chat-footer button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
