@@ -9,6 +9,7 @@ import Skills from './component/Skills.jsx';
 import Contact from './component/Contact.jsx';
 import FloatingButtons from './Floatingbutton/Button.jsx';
 import Footer from './Footer/Footer.jsx';
+import ChatBot from './component/ChatBot.jsx';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       </Router>
       <FloatingButtons />
       <Footer />
+      <ChatBot />
     </div>
   )
 }
